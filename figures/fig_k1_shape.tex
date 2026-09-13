@@ -1,0 +1,16 @@
+\begin{tikzpicture}[x=2.2cm,y=2.2cm,>=Stealth]
+  \draw[gray!22,thin] (0.5,-0.56)--(0.5,0.56);
+  \node[font=\tiny,gray!70,anchor=north] at (0.5,-0.575) {500};
+  \draw[gray!22,thin] (1,-0.56)--(1,0.56);
+  \node[font=\tiny,gray!70,anchor=north] at (1,-0.575) {1000};
+  \draw[gray!22,thin] (1.5,-0.56)--(1.5,0.56);
+  \node[font=\tiny,gray!70,anchor=north] at (1.5,-0.575) {1500};
+  \draw[gray!45,thin] (-0.02,0)--(1.60,0);
+  \fill[blue!25] (-0,-0) -- (1.5,-0.5236) -- (1.5,-0.4189) -- (1.5,-0.2094) -- (1.5,1.451e-13) -- (1.5,0.2094) -- (1.5,0.4189) -- (1.5,0.5236) -- cycle;
+  \draw[blue!60!black,thin] (-0,-0) -- (1.5,-0.5236) -- (1.5,-0.4189) -- (1.5,-0.2094) -- (1.5,1.451e-13) -- (1.5,0.2094) -- (1.5,0.4189) -- (1.5,0.5236) -- cycle;
+  \fill (0,0) circle (0.5pt); \node[below left,font=\scriptsize] at (0,0) {$S_1$};
+  \draw[<->,gray!65,thin] (1.52,-0.5236)--(1.52,0.5236);
+  \node[gray!65,font=\tiny,anchor=west,align=left] at (1.54,0) {跨度\\ $52$ m};
+  \node[blue!60!black,font=\tiny,anchor=north west] at (0.62,0.44) {$K_1$：长 $1500$ m、内径 $5$ m};
+  \node[gray!70,font=\tiny,anchor=north west,align=left] at (-0.02,-0.62) {纵轴放大 $20$ 倍\\（真实张角仅 $2^\circ$）\\横轴真实比例，单位 m};
+\end{tikzpicture}

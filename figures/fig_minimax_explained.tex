@@ -1,0 +1,38 @@
+% 教学示意数据，不使用本文仿真结果；三个小图共用相同条长比例。
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,>=Stealth,
+  candidate/.style={draw=black,fill=white,line width=.6pt,rounded corners=2pt},
+  ordinary/.style={draw=black,pattern=north east lines,pattern color=black},
+  worst/.style={draw=black,fill=black},
+  chosen/.style={draw=black,fill=white,line width=.7pt,rounded corners=2pt}]
+  \path[use as bounding box] (-.10,-1.45) rectangle (13.55,3.82);
+  \node at (6.725,3.53)
+    {\textbf{第一步：固定第二测点，比较不同情形，取最大的定位直径}};
+
+  \foreach \xx/\name/\va/\vb/\vc in
+    {0/甲/40/65/120,4.6/乙/55/70/95,9.2/丙/35/60/135}{
+    \begin{scope}[shift={(\xx,0)}]
+      \draw[candidate] (0,0) rectangle (4.25,3.15);
+      \node[font=\small\bfseries] at (2.125,2.84) {第二测点方案\name};
+      \foreach \yy/\idx/\val in {2.28/1/\va,1.78/2/\vb,1.28/3/\vc}{
+        \node[anchor=east,inner sep=0pt] at (1.20,\yy) {情形\idx};
+        \ifnum\idx=3
+          \path[worst] (1.55,{\yy-0.12}) rectangle ({1.55+0.0135*\val},{\yy+0.12});
+        \else
+          \path[ordinary] (1.55,{\yy-0.12}) rectangle ({1.55+0.0135*\val},{\yy+0.12});
+        \fi
+        \node[anchor=west,inner sep=2pt] at ({1.55+0.0135*\val},\yy) {\val};
+      }
+      \draw[black] (1.55,1.04)--(1.55,2.49);
+      \node[text=black] at (2.125,0.86) {直径（m），越短越好};
+      \node[text=black,font=\small\bfseries] at (2.125,0.37)
+        {本方案最坏值：\vc\ m};
+    \end{scope}
+  }
+
+  \draw[black] (2.125,0)--(2.125,-0.16)--(11.325,-0.16)--(11.325,0);
+  \draw[->,black,thick] (6.725,0)--(6.725,-0.31);
+  \node[chosen,minimum width=12.4cm,minimum height=0.54cm] at (6.725,-0.60)
+    {\textbf{第二步：比较各方案的最坏值：}$\min(120,95,135)=95$ m，\textbf{选择乙}};
+  \node[text=black,align=center] at (6.725,-1.19)
+    {各情形代表不同的源点位置与示向误差；仅为准则示意，非本文仿真结果。};
+\end{tikzpicture}

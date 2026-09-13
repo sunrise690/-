@@ -1,0 +1,71 @@
+% 实际半角均为 1 度。示意构型 S1=(0,0), q=(830,-550), G=(1100,0), e=0。
+% 四个交点由两组直线解析求交；A、B 为穷举六组顶点对得到的最远两点。
+% 左图与右图等比例局部放大均使用相同坐标，不改变角域或交集形状。
+% 第二次测向采用珊瑚粉；浅色用于区域填充。
+\definecolor{coralPink}{HTML}{F47C7C}
+\definecolor{coralPinkLight}{HTML}{FDE2E2}
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,>=Stealth]
+  \colorlet{firstblue}{qNavy}
+  \colorlet{secondorange}{coralPink}
+  \colorlet{regiongreen}{qRedDark}
+  \path[use as bounding box] (0,0) rectangle (13.6,5.45);
+  \node at (3.4,5.15) {(a) 两次角域交会};
+  \node at (10.75,5.15) {(b) 同一交集的局部放大};
+  % 实际角域：左图的比例为 0.0041 cm/m。
+  \begin{scope}
+    \clip (.35,.55) rectangle (6.85,4.75);
+    \begin{scope}[shift={(.55,3.2)},x=.0041cm,y=.0041cm]
+      \path[fill=qCyanLight,draw=firstblue,line width=.7pt]
+        (0,0)--(1499.771542,26.178609)--(1499.771542,-26.178609)--cycle;
+      \path[fill=coralPinkLight,draw=secondorange,line width=.7pt]
+        (830,-550)--(1742.545068,1229.680168)
+        --(1679.879228,1260.443398)--cycle;
+      \draw[firstblue,dashed] (0,0)--(1500,0);
+      \draw[secondorange,dashed] (830,-550)--(1535.077105,886.268177);
+      \path[fill=qRed,draw=regiongreen,line width=.7pt]
+        (1079.343252,-18.840007)--(1102.152337,-19.238141)
+        --(1122.059528,19.585622)--(1097.177573,19.151306)--cycle;
+    \end{scope}
+  \end{scope}
+  \fill (.55,3.2) circle (2pt) node[below=5pt] {$S_1$};
+  \fill (3.953,.945) circle (2pt) node[below=5pt] {$q$};
+  \node[text=black] at (2.2,3.7) {首测角域};
+  \draw[black,->] (2.2,3.5)--(2.65,3.22);
+  \node[text=black] at (2.7,1.8) {次测角域};
+  \draw[black,->] (3.45,1.85)--(4.36,1.75);
+  \draw[regiongreen,thick] (5.06,3.2) circle (.23);
+  \node[text=black] at (6.7,4.20) {小范围交集};
+  \draw[black,->] (6.5,3.98)--(5.12,3.45);
+  \draw[gray,dashed] (5.22,3.38)--(8.0,4.78);
+  \draw[gray,dashed] (5.22,3.02)--(8.0,.78);
+  \node at (3.4,.20) {两次测向的实际半角均为 $1^\circ$};
+  % 局部等比例放大：0.055 cm/m；中心 (1100,0) 映射至 (10.7,2.8)。
+  \begin{scope}
+    \clip (8.0,.78) rectangle (13.45,4.78);
+    \begin{scope}[shift={(10.7,2.8)},x=.055cm,y=.055cm]
+      \begin{scope}[shift={(-1100,0)}]
+        \path[fill=qCyanLight,draw=firstblue,line width=.9pt]
+          (0,0)--(2000,34.910130)--(2000,-34.910130)--cycle;
+        % 精确的次测两条边界，方向为 atan2(550,270) +- 1 degree。
+        \path[fill=coralPinkLight,draw=secondorange,line width=.9pt]
+          (830,-550)--(1742.545068,1229.680168)
+          --(1679.879228,1260.443398)--cycle;
+        \draw[firstblue,dashed] (1000,0)--(1200,0);
+        \draw[secondorange,dashed] (1030,-142.592593)--(1170,142.592593);
+        \path[fill=qRed,draw=regiongreen,line width=1.1pt]
+          (1079.343252,-18.840007)--(1102.152337,-19.238141)
+          --(1122.059528,19.585622)--(1097.177573,19.151306)--cycle;
+      \end{scope}
+    \end{scope}
+  \end{scope}
+  \draw[gray] (8.0,.78) rectangle (13.45,4.78);
+  \coordinate (A) at (9.563879,1.763800);
+\coordinate (B) at (11.913274,3.877209);
+\draw[regiongreen,line width=1.2pt] (A)--(B)
+  node[midway,above=2pt,sloped,fill=white,inner sep=2pt,text=black] {$D_2=\|A-B\|$};
+\fill[regiongreen] (A) circle (2.1pt) node[below left=2pt,text=black] {$A$};
+\fill[regiongreen] (B) circle (2.1pt) node[above right=2pt,text=black] {$B$};
+\node[fill=white,inner sep=2pt,text=black] at (11.85,1.15)
+  {定位区域 $\Omega$};
+  \node at (10.75,.20) {直径：区域内最远两点的距离};
+\end{tikzpicture}

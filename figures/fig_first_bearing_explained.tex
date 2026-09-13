@@ -1,0 +1,41 @@
+% 解释性示意图：角度与 5 m 内边界均放大，不用于读取坐标或比例。
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,>=Stealth]
+  \colorlet{firstblue}{qNavy}
+  % CUMCM 模板的中文字体和行距较大，顶部额外留白以避免说明文字重叠。
+  \path[use as bounding box] (0,0) rectangle (13.4,5.85);
+  \coordinate (S) at (0.8,2.45);
+  \begin{scope}[shift={(S)}]
+    \path[fill=qCyanLight,draw=firstblue,line width=.9pt]
+      (12:0.58) -- (12:7.6) arc[start angle=12,end angle=-12,radius=7.6]
+      -- (-12:0.58) arc[start angle=-12,end angle=12,radius=.58] -- cycle;
+    \draw[firstblue,dashed] (0,0)--(12:.58);
+    \draw[firstblue,dashed] (0,0)--(-12:.58);
+    \draw[firstblue,thick,->] (0,0)--(7.95,0);
+    \fill (0,0) circle (2pt);
+    \node[below=5pt] at (0,0) {$S_1$};
+    \node[above=3pt,fill=white,inner sep=2pt] at (5.0,0)
+      {首测示向 $\tilde\theta_1$};
+    \node[anchor=south west,text=firstblue] at (2.0,.57)
+      {$\tilde\theta_1+1^\circ$};
+    \node[anchor=north west,text=firstblue] at (2.0,-.57)
+      {$\tilde\theta_1-1^\circ$};
+    \draw[firstblue,<->] (0:1.52) arc[start angle=0,end angle=12,radius=1.52];
+    \draw[firstblue,<->] (-12:1.52) arc[start angle=-12,end angle=0,radius=1.52];
+    \fill[firstblue] (2.45,.15) circle (2.2pt);
+    \fill[firstblue] (5.05,-.42) circle (2.2pt);
+    \fill[firstblue] (6.8,.69) circle (2.2pt);
+    \node[above=3pt] at (3.00,-.10) {$G_a$};
+    \node[below=3pt] at (5.05,-.42) {$G_b$};
+    \node[above=3pt] at (6.8,.69) {$G_c$};
+  \end{scope}
+  \draw[gray,densely dotted] (1.38,2.28)--(1.38,.50);
+  \draw[gray,densely dotted] (8.4,2.45)--(8.4,.50);
+  \draw[<->,gray!80!black] (1.38,.55)--(8.4,.55)
+    node[midway,below=3pt,text=black] {径向距离仍可为 $5\sim1500$ m};
+  \node[align=left,anchor=west,text width=4.5cm] at (8.85,2.70)
+    {蓝色扇环为可行源集 $K_1$。\\[5pt]
+     $G_a,G_b,G_c$ 都可能产生这次示向；仅凭方向还不能确定距离。};
+  
+  
+
+\end{tikzpicture}

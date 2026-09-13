@@ -1,0 +1,34 @@
+\begin{tikzpicture}[x=0.022cm,y=0.022cm,>=Stealth,font=\small]
+\path[use as bounding box] (710,-695) rectangle (1365,-370);
+\draw[step=25,gray!15,very thin] (735,-675) grid (935,-400);
+\draw[->,black] (735,-675)--(952,-675) node[right,text=black] {$x$/m};
+\draw[->,black] (735,-675)--(735,-387) node[above,text=black] {$y$/m};
+\fill[qCyanLight] (759.707031,-645.605469) -- (764.707031,-645.605469) -- (784.707031,-625.605469) -- (814.707031,-585.605469) -- (839.707031,-550.605469) -- (864.707031,-510.605469) -- (889.707031,-465.605469) -- (909.707031,-425.605469) -- (909.707031,-420.605469) -- (894.707031,-435.605469) -- (869.707031,-465.605469) -- (809.707031,-545.605469) -- (779.707031,-590.605469) -- (759.707031,-625.605469) -- cycle;
+\draw[qBlueDark,thick] (759.707031,-645.605469) -- (764.707031,-645.605469) -- (784.707031,-625.605469) -- (814.707031,-585.605469) -- (839.707031,-550.605469) -- (864.707031,-510.605469) -- (889.707031,-465.605469) -- (909.707031,-425.605469) -- (909.707031,-420.605469) -- (894.707031,-435.605469) -- (869.707031,-465.605469) -- (809.707031,-545.605469) -- (779.707031,-590.605469) -- (759.707031,-625.605469) -- cycle;
+\node[below,font=\scriptsize] at (750.000000,-675.000000) {750};
+\node[below,font=\scriptsize] at (800.000000,-675.000000) {800};
+\node[below,font=\scriptsize] at (850.000000,-675.000000) {850};
+\node[below,font=\scriptsize] at (900.000000,-675.000000) {900};
+\node[left,font=\scriptsize] at (735.000000,-650.000000) {-650};
+\node[left,font=\scriptsize] at (735.000000,-550.000000) {-550};
+\node[left,font=\scriptsize] at (735.000000,-450.000000) {-450};
+\fill[qBlueDark] (759.707031,-645.605469) circle (2pt);
+\fill[qBlueDark] (764.707031,-645.605469) circle (2pt);
+\fill[qBlueDark] (784.707031,-625.605469) circle (2pt);
+\fill[qBlueDark] (814.707031,-585.605469) circle (2pt);
+\fill[qBlueDark] (839.707031,-550.605469) circle (2pt);
+\fill[qBlueDark] (864.707031,-510.605469) circle (2pt);
+\fill[qBlueDark] (889.707031,-465.605469) circle (2pt);
+\fill[qBlueDark] (909.707031,-425.605469) circle (2pt);
+\fill[qBlueDark] (909.707031,-420.605469) circle (2pt);
+\fill[qBlueDark] (894.707031,-435.605469) circle (2pt);
+\fill[qBlueDark] (869.707031,-465.605469) circle (2pt);
+\fill[qBlueDark] (809.707031,-545.605469) circle (2pt);
+\fill[qBlueDark] (779.707031,-590.605469) circle (2pt);
+\fill[qBlueDark] (759.707031,-625.605469) circle (2pt);
+\draw[qOrange,fill=white,line width=1.1pt] (832.207031,-538.462612) circle (3pt);
+\draw[->,black] (986,-520)--(832.207031,-538.462612);
+\node[anchor=west,text width=6.6cm,align=left,text=black] at (990,-415) {\textbf{第一步：按精度阈值筛点}\\保留标称搜索值不超过 $113.329$ m 且通过约束检查的网格点。};
+\node[anchor=west,text width=6.6cm,align=left,text=black] at (990,-500) {\textbf{第二步：用凸包概括分布}\\蓝点为结果文件中的 $14$ 个边界顶点，蓝色多边形是其凸包。};
+\node[anchor=west,text width=6.6cm,align=left,text=black] at (990,-600) {\textbf{第三步：实际落点再次检查}\\空心点示例位于凸包内部；连边新包入的位置不自动满足原来的精度阈值。};
+\end{tikzpicture}

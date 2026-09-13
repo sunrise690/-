@@ -1,0 +1,15 @@
+\begin{tikzpicture}[x=0.695cm,y=0.695cm,>=Stealth]
+  \draw[gray!75,dashed] (0,0) circle (3.600);
+  \draw[gray!60,dotted] (0,0) circle (3.000);
+  \draw[->] (-2.2,0)--(3.4,0) node[right,font=\small]{$x$};
+  \draw[->] (0,-1.7)--(0,1.3) node[above,font=\small]{$y$};
+  \node[gray!85,font=\scriptsize,anchor=south west] at (-2.9,-2.9) {目标圆域半径 $1800$ m};
+  \draw[qNavy,line width=1.1pt] (-0,-0) -- (3,-0.05236) -- (3,-0.04189) -- (3,-0.02094) -- (3,1.451e-14) -- (3,0.02094) -- (3,0.04189) -- (3,0.05236) -- cycle;
+  \node[qNavy,font=\small,anchor=west] at (2.15,0.48) {$K_1$};
+  \fill (0,0) circle (0.035); \node[below left,font=\small] at (0,0) {$S_1$};
+  \fill[qRed] (1.519,-1.291) -- (1.529,-1.291) -- (1.569,-1.251) -- (1.629,-1.171) -- (1.679,-1.101) -- (1.729,-1.021) -- (1.779,-0.9312) -- (1.819,-0.8512) -- (1.819,-0.8412) -- (1.789,-0.8712) -- (1.739,-0.9312) -- (1.619,-1.091) -- (1.559,-1.181) -- (1.519,-1.251) -- cycle;
+  \fill[qRed] (1.679,-1.101) circle (0.035);
+  \node[qRed,font=\small,anchor=north west] at (1.74,-1.14) {$\widehat q$};
+  \draw[qRed,densely dashed] (0,0) -- (1.679,-1.101);
+  \node[qRed,font=\scriptsize,anchor=north] at (-0.45,-1.55) {$1004$ m};
+\end{tikzpicture}

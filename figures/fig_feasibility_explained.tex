@@ -1,0 +1,42 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,font=\small]
+\path[use as bounding box] (-2.35,-2.55) rectangle (10.65,2.4);
+
+\begin{scope}
+\clip (0.009998,-0.000175) circle (2);
+\clip (0.009998,0.000175) circle (2);
+\clip (2.999543,-0.052357) circle (2);
+\clip (2.999543,0.052357) circle (2);
+\fill[qBlueLight] (-2.1,-2.1) rectangle (5.1,2.1);
+\end{scope}
+
+\draw[qNavy] (0.01,0) circle (2);
+\draw[qOrange] (2.999543,0) circle (2);
+\draw[->,gray!65] (-0.4,0)--(3.65,0);
+\draw[qNavy,line width=1pt] (0.01,0)--(2.999543,-0.052357)--(2.999543,0.052357)--cycle;
+
+\fill (0.01,0) circle (1.7pt) node[above left] {$G_{\rm near}$};
+\fill (2.999543,0) circle (1.7pt) node[above right] {$G_{\rm far}$};
+
+\node[text=black,align=center] at (0.01,2.22) {近端源点的探测圆};
+\node[text=black,align=center] at (2.999543,2.22) {远端源点的探测圆};
+
+\node[text=black,align=center] at (1.5,0.85) {公共部分\\同时满足两端约束};
+
+\fill[qBlueDark] (1.679414,-1.101211) circle (2.7pt);
+\node[qBlueDark,below left] at (1.679414,-1.101211) {$\widehat q$};
+\draw[qBlueDark,dashed] (0.01,0)--(1.679414,-1.101211);
+
+\fill[qRedDark] (2.5,-1) circle (2.7pt) node[right] {$q_{\rm out}$};
+\draw[qRedDark,densely dashed] (0.01,0)--(2.5,-1);
+
+\node[anchor=north west,text width=4.3cm,align=left] at (5.7,2.3)
+{先检查一个可能源点。};
+
+\node[anchor=north west,text width=4.3cm,align=left] at (5.7,1.65)
+{再兼顾所有可能源点\\第二测点必须同时\\落在各探测圆内。};
+
+\node[anchor=north west,text width=4.3cm,align=left,qRedDark] at (5.7,-0.05)
+{$q_{\rm out}$ 能覆盖远端，\\却距近端超过 $1000$ m，\\不能通过保守约束。};
+
+\node[align=center] at (1.5,-2.4) {各圆半径均为 $1000$ m；图中略去 $5$ m 近距排除区};
+\end{tikzpicture}

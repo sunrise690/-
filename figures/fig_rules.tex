@@ -1,0 +1,17 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \draw[gray!50] (0,0.5)--(0,-5.4);
+  \draw[gray!50] (0,0.5)--(12.465,0.5);
+  \fill[blue!35] (0,-0.34) rectangle (1.3508,-0.02);  \fill[red!45] (0,0.02) rectangle (2.3698,0.34);  \node[left,font=\small] at (0,0) {本文 minimax};  \node[anchor=west,font=\scriptsize,blue!60!black] at (1.3508,-0.18) {61.4};  \node[anchor=west,font=\scriptsize,red!55!black] at (2.3698,0.18) {107.7};
+  \fill[blue!35] (0,-1.34) rectangle (1.5352,-1.02);  \fill[red!45] (0,-0.98) rectangle (2.607,-0.66);  \node[left,font=\small] at (0,-1) {解析基准};  \node[anchor=west,font=\scriptsize,blue!60!black] at (1.5352,-1.18) {69.78};  \node[anchor=west,font=\scriptsize,red!55!black] at (2.607,-0.82) {118.5};
+  \fill[blue!35] (0,-2.34) rectangle (1.3957,-2.02);  \fill[red!45] (0,-1.98) rectangle (2.3799,-1.66);  \node[left,font=\small] at (0,-2) {Tokekar 引理1};  \node[anchor=west,font=\scriptsize,blue!60!black] at (1.3957,-2.18) {63.44};  \node[anchor=west,font=\scriptsize,red!55!black] at (2.3799,-1.82) {108.2};
+  \fill[blue!35] (0,-3.34) rectangle (1.3722,-3.02);  \fill[red!45] (0,-2.98) rectangle (2.3989,-2.66);  \node[left,font=\small] at (0,-3) {IROS Greedy};  \node[anchor=west,font=\scriptsize,blue!60!black] at (1.3722,-3.18) {62.37};  \node[anchor=west,font=\scriptsize,red!55!black] at (2.3989,-2.82) {109};
+  \fill[blue!35] (0,-4.34) rectangle (1.391,-4.02);  \fill[red!45] (0,-3.98) rectangle (2.4908,-3.66);  \node[left,font=\small] at (0,-4) {IROS EnumTree};  \node[anchor=west,font=\scriptsize,blue!60!black] at (1.391,-4.18) {63.23};  \node[anchor=west,font=\scriptsize,red!55!black] at (2.4908,-3.82) {113.2};
+  \fill[blue!35] (0,-5.34) rectangle (6.0944,-5.02);  \fill[red!45] (0,-4.98) rectangle (11.13,-4.66);  \node[left,font=\small] at (0,-5) {IROS FIM};  \node[anchor=west,font=\scriptsize,blue!60!black] at (6.0944,-5.18) {277};  \node[anchor=west,font=\scriptsize,red!55!black] at (11.13,-4.82) {505.9};
+  \node[anchor=north west,font=\small] at (0,0.80) {平均定位直径 $E[D_2\mid\text{检测}]$（蓝）与尾部风险 CVaR$_{95}$（红），单位 m};
+  \draw[gray!25,thin] (0,-5.4)--(0,0.5);  \node[font=\tiny,gray!70,anchor=north] at (0,-5.45) {0};
+  \draw[gray!25,thin] (2.2,-5.4)--(2.2,0.5);  \node[font=\tiny,gray!70,anchor=north] at (2.2,-5.45) {100};
+  \draw[gray!25,thin] (4.4,-5.4)--(4.4,0.5);  \node[font=\tiny,gray!70,anchor=north] at (4.4,-5.45) {200};
+  \draw[gray!25,thin] (6.6,-5.4)--(6.6,0.5);  \node[font=\tiny,gray!70,anchor=north] at (6.6,-5.45) {300};
+  \draw[gray!25,thin] (8.8,-5.4)--(8.8,0.5);  \node[font=\tiny,gray!70,anchor=north] at (8.8,-5.45) {400};
+  \draw[gray!25,thin] (11,-5.4)--(11,0.5);  \node[font=\tiny,gray!70,anchor=north] at (11,-5.45) {500};
+\end{tikzpicture}
